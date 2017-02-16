@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" manifest="/webappblog.manifest">
+  <head>
+    <meta charset="utf-8">
+    <title>webapp-blog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes">
+    <link rel="apple-touch-icon" href="icon.png" >
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./dist/build.js"></script>
+    <!--<script>
+    window.addEventListener('DOMContentLoaded',function() {
+    	if(navigator && navigator.onLine === false) {
+    		document.getElementById('app').background = 'red';
+    		startWithOfflineResources();
+    	}else {
+    		var xhr = new XMLHttpRequest();
+    		xhr.open('get','/getScript',false);
+    		xhr.send(null);
+    		if(xhr.status >=200 && xhr.status < 300 || xhr.status == 304) {
+    			var data = xhr.responseText;
+    			startWithResources(data);
+    			//增加缓存
+    			localStorage.resources = JSON.stringify(data);
+    		}else {
+    			startWithOfflineResources();
+    		}
+    	}
+
+    	//加载缓存的js
+    	function startWithOfflineResources() {
+    		if(localStorage && localStorage.resources) {
+    			var data = JSON.parse(localStorage.resources);
+    			startWithResources(data);
+    		}else {
+    			alert("the app can't start right now")
+    		}    		
+    	}
+
+    	//添加script标签
+    	function startWithResources(script) {
+    		var node = document.createElement('script');
+			node.innerHTML = script;
+			document.head.appendChild(node);
+    	}
+    })
+    </script>-->
+  </body>
+</html>
