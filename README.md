@@ -16,7 +16,7 @@ npm install
 
 # serve with hot reload at localhost:3000
 cd api
-node index
+node index.js
 
 #浏览器打开
 localhost:3000/
